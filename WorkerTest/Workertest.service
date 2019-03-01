@@ -1,0 +1,13 @@
+﻿[Unit]
+Description=Example .NET Core Worker running on Ubuntu
+
+[Service]
+ExecStart=/usr/bin/workertest
+Restart=always
+RestartSec=10
+KillSignal=SIGINT
+SyslogIdentifier=dotnet-worker
+Environment=DOTNET_PRINT_TELEMETRY_MESSAGE=false
+
+[Install]
+WantedBy=multi-user.target
